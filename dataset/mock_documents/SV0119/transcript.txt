@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0119
+
+    Full Name: Hoang Gia An
+
+    University: ĐH FPT
+
+    GPA: 3.22
+    

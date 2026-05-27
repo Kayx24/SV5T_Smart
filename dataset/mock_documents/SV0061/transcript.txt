@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0061
+
+    Full Name: Hoang Thanh An
+
+    University: ĐH Bách Khoa
+
+    GPA: 3.59
+    

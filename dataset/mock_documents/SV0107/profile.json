@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0107",
+    "student_name": "Pham Thi An",
+    "university": "ĐH FPT",
+    "gpa": 3.0,
+    "ielts": 5.0,
+    "volunteer_hours": 86,
+    "research": false,
+    "disciplinary_action": false
+}

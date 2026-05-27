@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0015",
+    "student_name": "Le Minh Duy",
+    "university": "ĐH CNTT",
+    "gpa": 3.33,
+    "ielts": 5.0,
+    "volunteer_hours": 76,
+    "research": true,
+    "disciplinary_action": true
+}

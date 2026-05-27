@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0051",
+    "student_name": "Le Thi Chau",
+    "university": "ĐH CNTT",
+    "gpa": 2.09,
+    "ielts": 7.0,
+    "volunteer_hours": 30,
+    "research": true,
+    "disciplinary_action": false
+}

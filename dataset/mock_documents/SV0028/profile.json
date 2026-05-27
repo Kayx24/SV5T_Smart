@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0028",
+    "student_name": "Hoang Minh Binh",
+    "university": "ĐH CNTT",
+    "gpa": 3.96,
+    "ielts": 5.5,
+    "volunteer_hours": 50,
+    "research": true,
+    "disciplinary_action": false
+}

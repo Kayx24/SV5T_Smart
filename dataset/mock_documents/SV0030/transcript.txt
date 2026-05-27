@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0030
+
+    Full Name: Tran Gia Chau
+
+    University: ĐH CNTT
+
+    GPA: 2.4
+    

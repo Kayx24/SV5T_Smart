@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0092
+
+    Full Name: Le Gia Huy
+
+    University: ĐH KHTN
+
+    GPA: 2.35
+    

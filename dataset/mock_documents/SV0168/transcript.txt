@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0168
+
+    Full Name: Tran Thanh Binh
+
+    University: ĐH FPT
+
+    GPA: 2.86
+    

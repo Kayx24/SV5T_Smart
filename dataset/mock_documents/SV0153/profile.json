@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0153",
+    "student_name": "Hoang Thi Chau",
+    "university": "ĐH CNTT",
+    "gpa": 3.33,
+    "ielts": 5.0,
+    "volunteer_hours": 8,
+    "research": true,
+    "disciplinary_action": false
+}

@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0085",
+    "student_name": "Nguyen Thi Binh",
+    "university": "ĐH KHTN",
+    "gpa": 3.24,
+    "ielts": 6.0,
+    "volunteer_hours": 60,
+    "research": true,
+    "disciplinary_action": false
+}

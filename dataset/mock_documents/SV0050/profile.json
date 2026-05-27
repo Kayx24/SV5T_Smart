@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0050",
+    "student_name": "Pham Minh Duy",
+    "university": "ĐH FPT",
+    "gpa": 2.46,
+    "ielts": 7.0,
+    "volunteer_hours": 46,
+    "research": false,
+    "disciplinary_action": false
+}

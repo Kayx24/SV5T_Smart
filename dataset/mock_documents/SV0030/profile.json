@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0030",
+    "student_name": "Tran Gia Chau",
+    "university": "ĐH CNTT",
+    "gpa": 2.4,
+    "ielts": 6.0,
+    "volunteer_hours": 48,
+    "research": true,
+    "disciplinary_action": false
+}

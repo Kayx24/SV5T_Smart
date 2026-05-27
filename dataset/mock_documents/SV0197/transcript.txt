@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0197
+
+    Full Name: Nguyen Minh Huy
+
+    University: ĐH CNTT
+
+    GPA: 2.01
+    

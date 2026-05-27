@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0160
+
+    Full Name: Hoang Gia Duy
+
+    University: ĐH KHTN
+
+    GPA: 2.1
+    

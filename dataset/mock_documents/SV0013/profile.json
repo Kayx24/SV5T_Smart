@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0013",
+    "student_name": "Hoang Van Huy",
+    "university": "ĐH CNTT",
+    "gpa": 2.98,
+    "ielts": 6.5,
+    "volunteer_hours": 16,
+    "research": true,
+    "disciplinary_action": false
+}

@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0106",
+    "student_name": "Pham Van An",
+    "university": "ĐH CNTT",
+    "gpa": 2.62,
+    "ielts": 6.5,
+    "volunteer_hours": 68,
+    "research": true,
+    "disciplinary_action": true
+}

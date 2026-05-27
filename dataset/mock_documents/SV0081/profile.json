@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0081",
+    "student_name": "Pham Van Binh",
+    "university": "ĐH KHTN",
+    "gpa": 2.33,
+    "ielts": 5.5,
+    "volunteer_hours": 118,
+    "research": true,
+    "disciplinary_action": false
+}

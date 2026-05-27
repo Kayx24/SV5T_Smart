@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0005
+
+    Full Name: Pham Minh An
+
+    University: ĐH CNTT
+
+    GPA: 3.56
+    

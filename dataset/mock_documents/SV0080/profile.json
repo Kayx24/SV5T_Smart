@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0080",
+    "student_name": "Hoang Gia An",
+    "university": "ĐH Bách Khoa",
+    "gpa": 3.25,
+    "ielts": 7.0,
+    "volunteer_hours": 16,
+    "research": false,
+    "disciplinary_action": true
+}

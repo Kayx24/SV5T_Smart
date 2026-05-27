@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0129
+
+    Full Name: Nguyen Thi Chau
+
+    University: ĐH CNTT
+
+    GPA: 3.47
+    

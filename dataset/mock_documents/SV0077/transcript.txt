@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0077
+
+    Full Name: Le Thanh An
+
+    University: ĐH CNTT
+
+    GPA: 3.52
+    

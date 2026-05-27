@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0090
+
+    Full Name: Hoang Thanh Huy
+
+    University: ĐH FPT
+
+    GPA: 3.8
+    

@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0155",
+    "student_name": "Hoang Thanh Binh",
+    "university": "ĐH FPT",
+    "gpa": 2.37,
+    "ielts": 6.0,
+    "volunteer_hours": 120,
+    "research": true,
+    "disciplinary_action": false
+}

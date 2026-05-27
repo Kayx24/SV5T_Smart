@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0187",
+    "student_name": "Nguyen Gia Duy",
+    "university": "ĐH KHTN",
+    "gpa": 3.11,
+    "ielts": 5.5,
+    "volunteer_hours": 76,
+    "research": true,
+    "disciplinary_action": true
+}

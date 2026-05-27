@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0117
+
+    Full Name: Pham Van Duy
+
+    University: ĐH CNTT
+
+    GPA: 3.28
+    

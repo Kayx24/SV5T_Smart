@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0126
+
+    Full Name: Hoang Van Chau
+
+    University: ĐH CNTT
+
+    GPA: 3.51
+    

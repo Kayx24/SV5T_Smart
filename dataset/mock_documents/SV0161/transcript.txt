@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0161
+
+    Full Name: Tran Thi Huy
+
+    University: ĐH CNTT
+
+    GPA: 3.27
+    

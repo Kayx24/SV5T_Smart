@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0200",
+    "student_name": "Le Gia Chau",
+    "university": "ĐH Bách Khoa",
+    "gpa": 3.62,
+    "ielts": 6.5,
+    "volunteer_hours": 9,
+    "research": false,
+    "disciplinary_action": false
+}

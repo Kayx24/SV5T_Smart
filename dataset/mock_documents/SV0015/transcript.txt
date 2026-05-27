@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0015
+
+    Full Name: Le Minh Duy
+
+    University: ĐH CNTT
+
+    GPA: 3.33
+    

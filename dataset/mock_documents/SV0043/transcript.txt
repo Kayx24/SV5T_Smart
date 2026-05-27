@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0043
+
+    Full Name: Le Thi Binh
+
+    University: ĐH FPT
+
+    GPA: 3.39
+    

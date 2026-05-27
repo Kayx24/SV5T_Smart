@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0053
+
+    Full Name: Hoang Thi Huy
+
+    University: ĐH CNTT
+
+    GPA: 3.03
+    

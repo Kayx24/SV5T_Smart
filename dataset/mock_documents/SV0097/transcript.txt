@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0097
+
+    Full Name: Nguyen Gia An
+
+    University: ĐH FPT
+
+    GPA: 2.43
+    

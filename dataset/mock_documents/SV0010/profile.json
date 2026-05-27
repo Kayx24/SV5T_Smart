@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0010",
+    "student_name": "Pham Minh An",
+    "university": "ĐH KHTN",
+    "gpa": 3.87,
+    "ielts": 7.0,
+    "volunteer_hours": 134,
+    "research": true,
+    "disciplinary_action": true
+}

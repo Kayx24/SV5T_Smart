@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0004
+
+    Full Name: Nguyen Thi Duy
+
+    University: ĐH Bách Khoa
+
+    GPA: 2.96
+    

@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0002",
+    "student_name": "Pham Thanh Chau",
+    "university": "ĐH Bách Khoa",
+    "gpa": 2.08,
+    "ielts": 7.0,
+    "volunteer_hours": 138,
+    "research": false,
+    "disciplinary_action": false
+}

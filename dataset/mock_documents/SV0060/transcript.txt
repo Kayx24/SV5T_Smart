@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0060
+
+    Full Name: Nguyen Minh An
+
+    University: ĐH FPT
+
+    GPA: 3.82
+    

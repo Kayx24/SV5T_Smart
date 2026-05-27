@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0102
+
+    Full Name: Hoang Gia Duy
+
+    University: ĐH Bách Khoa
+
+    GPA: 2.22
+    

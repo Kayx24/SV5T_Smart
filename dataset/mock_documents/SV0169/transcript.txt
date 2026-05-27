@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0169
+
+    Full Name: Hoang Thi Huy
+
+    University: ĐH CNTT
+
+    GPA: 3.88
+    

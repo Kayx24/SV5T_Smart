@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0021
+
+    Full Name: Nguyen Van Huy
+
+    University: ĐH Bách Khoa
+
+    GPA: 3.16
+    

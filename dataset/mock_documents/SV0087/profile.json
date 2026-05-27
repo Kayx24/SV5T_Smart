@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0087",
+    "student_name": "Nguyen Van Chau",
+    "university": "ĐH FPT",
+    "gpa": 2.37,
+    "ielts": 5.5,
+    "volunteer_hours": 108,
+    "research": false,
+    "disciplinary_action": false
+}

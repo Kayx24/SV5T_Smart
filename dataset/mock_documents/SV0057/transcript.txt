@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0057
+
+    Full Name: Le Thanh An
+
+    University: ĐH KHTN
+
+    GPA: 3.06
+    

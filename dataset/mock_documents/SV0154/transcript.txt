@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0154
+
+    Full Name: Tran Thanh Chau
+
+    University: ĐH CNTT
+
+    GPA: 2.21
+    

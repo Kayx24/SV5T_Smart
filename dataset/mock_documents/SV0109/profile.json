@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0109",
+    "student_name": "Le Gia Chau",
+    "university": "ĐH FPT",
+    "gpa": 3.9,
+    "ielts": 5.0,
+    "volunteer_hours": 127,
+    "research": true,
+    "disciplinary_action": false
+}

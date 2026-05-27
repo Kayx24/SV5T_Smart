@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0101",
+    "student_name": "Tran Van Binh",
+    "university": "ĐH FPT",
+    "gpa": 3.6,
+    "ielts": 5.0,
+    "volunteer_hours": 23,
+    "research": false,
+    "disciplinary_action": false
+}

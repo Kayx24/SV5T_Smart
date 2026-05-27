@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0181
+
+    Full Name: Tran Gia Huy
+
+    University: ĐH FPT
+
+    GPA: 3.76
+    

@@ -1,0 +1,14 @@
+# Chặn thư mục môi trường ảo
+env_v5t/
+.venv/
+venv/
+env/
+
+# Chặn file cấu hình bảo mật dữ liệu
+.env
+
+# Chặn các file rác của Python và hệ thống
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/

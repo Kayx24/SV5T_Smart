@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0041",
+    "student_name": "Pham Gia Binh",
+    "university": "ĐH Bách Khoa",
+    "gpa": 3.95,
+    "ielts": 5.5,
+    "volunteer_hours": 12,
+    "research": true,
+    "disciplinary_action": false
+}

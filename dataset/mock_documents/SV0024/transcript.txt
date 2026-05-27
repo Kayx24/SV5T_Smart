@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0024
+
+    Full Name: Pham Thanh An
+
+    University: ĐH FPT
+
+    GPA: 2.9
+    

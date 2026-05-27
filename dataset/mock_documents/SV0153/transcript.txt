@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0153
+
+    Full Name: Hoang Thi Chau
+
+    University: ĐH CNTT
+
+    GPA: 3.33
+    

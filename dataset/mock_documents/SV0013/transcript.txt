@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0013
+
+    Full Name: Hoang Van Huy
+
+    University: ĐH CNTT
+
+    GPA: 2.98
+    

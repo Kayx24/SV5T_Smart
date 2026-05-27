@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0022",
+    "student_name": "Tran Thanh Huy",
+    "university": "ĐH FPT",
+    "gpa": 2.46,
+    "ielts": 7.0,
+    "volunteer_hours": 113,
+    "research": true,
+    "disciplinary_action": false
+}

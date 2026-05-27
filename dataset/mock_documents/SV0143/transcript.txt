@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0143
+
+    Full Name: Hoang Thanh Binh
+
+    University: ĐH Bách Khoa
+
+    GPA: 3.51
+    

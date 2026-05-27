@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0194
+
+    Full Name: Tran Gia An
+
+    University: ĐH FPT
+
+    GPA: 3.54
+    

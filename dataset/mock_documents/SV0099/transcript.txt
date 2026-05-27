@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0099
+
+    Full Name: Pham Minh Huy
+
+    University: ĐH Bách Khoa
+
+    GPA: 4.0
+    

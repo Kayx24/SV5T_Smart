@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0123
+
+    Full Name: Le Van Huy
+
+    University: ĐH CNTT
+
+    GPA: 2.88
+    

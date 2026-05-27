@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0115",
+    "student_name": "Le Van An",
+    "university": "ĐH FPT",
+    "gpa": 3.63,
+    "ielts": 6.5,
+    "volunteer_hours": 96,
+    "research": true,
+    "disciplinary_action": false
+}

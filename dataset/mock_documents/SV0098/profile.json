@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0098",
+    "student_name": "Pham Thi Duy",
+    "university": "ĐH CNTT",
+    "gpa": 2.89,
+    "ielts": 4.5,
+    "volunteer_hours": 147,
+    "research": true,
+    "disciplinary_action": false
+}

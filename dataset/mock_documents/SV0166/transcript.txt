@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0166
+
+    Full Name: Pham Gia Duy
+
+    University: ĐH CNTT
+
+    GPA: 2.04
+    

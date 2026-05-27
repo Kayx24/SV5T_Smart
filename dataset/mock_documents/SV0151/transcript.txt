@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0151
+
+    Full Name: Nguyen Gia Chau
+
+    University: ĐH Bách Khoa
+
+    GPA: 2.11
+    

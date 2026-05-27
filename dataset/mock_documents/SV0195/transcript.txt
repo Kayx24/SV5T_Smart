@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0195
+
+    Full Name: Tran Thi Huy
+
+    University: ĐH FPT
+
+    GPA: 2.05
+    

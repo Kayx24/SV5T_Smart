@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0033
+
+    Full Name: Nguyen Thanh Binh
+
+    University: ĐH FPT
+
+    GPA: 3.39
+    

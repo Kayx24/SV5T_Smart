@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0028
+
+    Full Name: Hoang Minh Binh
+
+    University: ĐH CNTT
+
+    GPA: 3.96
+    

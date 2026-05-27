@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0070",
+    "student_name": "Le Gia Huy",
+    "university": "ĐH KHTN",
+    "gpa": 2.66,
+    "ielts": 6.5,
+    "volunteer_hours": 50,
+    "research": false,
+    "disciplinary_action": true
+}

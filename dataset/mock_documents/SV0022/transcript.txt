@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0022
+
+    Full Name: Tran Thanh Huy
+
+    University: ĐH FPT
+
+    GPA: 2.46
+    

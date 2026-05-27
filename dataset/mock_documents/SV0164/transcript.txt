@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0164
+
+    Full Name: Pham Minh Chau
+
+    University: ĐH FPT
+
+    GPA: 2.05
+    

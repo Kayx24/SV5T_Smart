@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0124
+
+    Full Name: Pham Thi Duy
+
+    University: ĐH CNTT
+
+    GPA: 3.36
+    

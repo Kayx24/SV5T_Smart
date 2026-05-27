@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0152
+
+    Full Name: Hoang Thanh An
+
+    University: ĐH KHTN
+
+    GPA: 2.92
+    

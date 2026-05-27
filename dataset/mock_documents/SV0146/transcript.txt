@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0146
+
+    Full Name: Pham Thanh Duy
+
+    University: ĐH CNTT
+
+    GPA: 3.27
+    

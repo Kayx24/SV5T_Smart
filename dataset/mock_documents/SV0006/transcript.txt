@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0006
+
+    Full Name: Nguyen Thi Chau
+
+    University: ĐH KHTN
+
+    GPA: 2.21
+    

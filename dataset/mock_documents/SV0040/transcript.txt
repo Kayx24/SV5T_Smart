@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0040
+
+    Full Name: Nguyen Thi Huy
+
+    University: ĐH CNTT
+
+    GPA: 3.63
+    

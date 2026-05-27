@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0113
+
+    Full Name: Pham Thi An
+
+    University: ĐH KHTN
+
+    GPA: 3.62
+    

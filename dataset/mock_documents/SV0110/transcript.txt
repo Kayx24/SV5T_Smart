@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0110
+
+    Full Name: Nguyen Thanh Huy
+
+    University: ĐH KHTN
+
+    GPA: 2.86
+    

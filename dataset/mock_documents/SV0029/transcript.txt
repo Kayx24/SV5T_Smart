@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0029
+
+    Full Name: Nguyen Van Huy
+
+    University: ĐH CNTT
+
+    GPA: 3.38
+    

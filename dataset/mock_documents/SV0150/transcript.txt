@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0150
+
+    Full Name: Nguyen Thanh Duy
+
+    University: ĐH FPT
+
+    GPA: 2.15
+    

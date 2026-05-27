@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0121",
+    "student_name": "Pham Thi Duy",
+    "university": "ĐH Bách Khoa",
+    "gpa": 3.21,
+    "ielts": 5.5,
+    "volunteer_hours": 147,
+    "research": false,
+    "disciplinary_action": false
+}

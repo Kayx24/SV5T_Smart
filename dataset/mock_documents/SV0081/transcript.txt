@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0081
+
+    Full Name: Pham Van Binh
+
+    University: ĐH KHTN
+
+    GPA: 2.33
+    

@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0121
+
+    Full Name: Pham Thi Duy
+
+    University: ĐH Bách Khoa
+
+    GPA: 3.21
+    

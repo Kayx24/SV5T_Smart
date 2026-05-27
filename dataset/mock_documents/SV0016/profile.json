@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0016",
+    "student_name": "Nguyen Van Chau",
+    "university": "ĐH KHTN",
+    "gpa": 2.87,
+    "ielts": 5.0,
+    "volunteer_hours": 112,
+    "research": false,
+    "disciplinary_action": true
+}

@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0088
+
+    Full Name: Tran Minh Duy
+
+    University: ĐH Bách Khoa
+
+    GPA: 2.7
+    

@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0032
+
+    Full Name: Hoang Gia Chau
+
+    University: ĐH Bách Khoa
+
+    GPA: 2.0
+    

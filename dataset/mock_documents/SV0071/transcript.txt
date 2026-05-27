@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0071
+
+    Full Name: Tran Minh Chau
+
+    University: ĐH CNTT
+
+    GPA: 2.21
+    

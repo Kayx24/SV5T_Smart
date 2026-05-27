@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0086
+
+    Full Name: Hoang Van Binh
+
+    University: ĐH FPT
+
+    GPA: 3.38
+    

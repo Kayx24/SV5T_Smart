@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0089
+
+    Full Name: Nguyen Thanh Huy
+
+    University: ĐH FPT
+
+    GPA: 2.45
+    

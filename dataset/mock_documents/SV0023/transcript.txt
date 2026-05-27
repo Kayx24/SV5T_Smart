@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0023
+
+    Full Name: Le Thi Binh
+
+    University: ĐH CNTT
+
+    GPA: 2.01
+    

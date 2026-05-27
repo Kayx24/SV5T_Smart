@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0003
+
+    Full Name: Tran Thi Binh
+
+    University: ĐH CNTT
+
+    GPA: 3.03
+    

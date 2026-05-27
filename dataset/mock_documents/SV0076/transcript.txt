@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0076
+
+    Full Name: Nguyen Thi An
+
+    University: ĐH CNTT
+
+    GPA: 3.64
+    

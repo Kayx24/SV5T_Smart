@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0078
+
+    Full Name: Nguyen Gia Duy
+
+    University: ĐH CNTT
+
+    GPA: 2.23
+    

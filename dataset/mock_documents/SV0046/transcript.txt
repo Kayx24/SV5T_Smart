@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0046
+
+    Full Name: Pham Minh An
+
+    University: ĐH FPT
+
+    GPA: 3.29
+    

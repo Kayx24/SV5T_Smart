@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0109
+
+    Full Name: Le Gia Chau
+
+    University: ĐH FPT
+
+    GPA: 3.9
+    

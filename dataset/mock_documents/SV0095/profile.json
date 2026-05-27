@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0095",
+    "student_name": "Pham Minh An",
+    "university": "ĐH FPT",
+    "gpa": 3.14,
+    "ielts": 5.5,
+    "volunteer_hours": 123,
+    "research": true,
+    "disciplinary_action": false
+}

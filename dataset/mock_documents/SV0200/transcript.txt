@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0200
+
+    Full Name: Le Gia Chau
+
+    University: ĐH Bách Khoa
+
+    GPA: 3.62
+    

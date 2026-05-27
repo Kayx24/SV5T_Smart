@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0177",
+    "student_name": "Nguyen Gia An",
+    "university": "ĐH CNTT",
+    "gpa": 2.99,
+    "ielts": 5.5,
+    "volunteer_hours": 109,
+    "research": true,
+    "disciplinary_action": false
+}

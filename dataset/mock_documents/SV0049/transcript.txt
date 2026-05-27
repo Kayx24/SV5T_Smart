@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0049
+
+    Full Name: Pham Thi Chau
+
+    University: ĐH FPT
+
+    GPA: 3.96
+    

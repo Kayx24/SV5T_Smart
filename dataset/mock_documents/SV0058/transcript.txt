@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0058
+
+    Full Name: Pham Thanh Huy
+
+    University: ĐH KHTN
+
+    GPA: 2.55
+    

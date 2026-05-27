@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0106
+
+    Full Name: Pham Van An
+
+    University: ĐH CNTT
+
+    GPA: 2.62
+    

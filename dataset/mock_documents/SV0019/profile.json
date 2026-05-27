@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0019",
+    "student_name": "Pham Thanh Binh",
+    "university": "ĐH CNTT",
+    "gpa": 2.25,
+    "ielts": 7.0,
+    "volunteer_hours": 97,
+    "research": false,
+    "disciplinary_action": true
+}

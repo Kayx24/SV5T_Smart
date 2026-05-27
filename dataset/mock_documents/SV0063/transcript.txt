@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0063
+
+    Full Name: Nguyen Van Huy
+
+    University: ĐH CNTT
+
+    GPA: 3.39
+    

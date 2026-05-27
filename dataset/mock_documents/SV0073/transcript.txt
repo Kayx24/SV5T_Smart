@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0073
+
+    Full Name: Tran Thanh An
+
+    University: ĐH Bách Khoa
+
+    GPA: 3.22
+    

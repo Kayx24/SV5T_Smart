@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0196
+
+    Full Name: Tran Gia Huy
+
+    University: ĐH KHTN
+
+    GPA: 2.09
+    

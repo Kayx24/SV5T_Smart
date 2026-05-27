@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0018",
+    "student_name": "Pham Van Duy",
+    "university": "ĐH KHTN",
+    "gpa": 3.11,
+    "ielts": 5.0,
+    "volunteer_hours": 73,
+    "research": true,
+    "disciplinary_action": false
+}

@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0082",
+    "student_name": "Pham Gia Binh",
+    "university": "ĐH FPT",
+    "gpa": 3.22,
+    "ielts": 5.0,
+    "volunteer_hours": 85,
+    "research": true,
+    "disciplinary_action": false
+}

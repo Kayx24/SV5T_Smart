@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0190
+
+    Full Name: Hoang Thanh An
+
+    University: ĐH FPT
+
+    GPA: 3.99
+    

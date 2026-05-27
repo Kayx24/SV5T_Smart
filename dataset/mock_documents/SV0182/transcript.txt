@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0182
+
+    Full Name: Hoang Thi Huy
+
+    University: ĐH Bách Khoa
+
+    GPA: 3.57
+    

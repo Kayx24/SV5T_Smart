@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0112",
+    "student_name": "Hoang Thanh Duy",
+    "university": "ĐH KHTN",
+    "gpa": 3.23,
+    "ielts": 4.5,
+    "volunteer_hours": 25,
+    "research": true,
+    "disciplinary_action": true
+}

@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0011",
+    "student_name": "Le Minh Binh",
+    "university": "ĐH Bách Khoa",
+    "gpa": 3.98,
+    "ielts": 5.0,
+    "volunteer_hours": 86,
+    "research": false,
+    "disciplinary_action": false
+}

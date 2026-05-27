@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0067
+
+    Full Name: Nguyen Van An
+
+    University: ĐH FPT
+
+    GPA: 3.48
+    

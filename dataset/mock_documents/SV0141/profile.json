@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0141",
+    "student_name": "Nguyen Thi An",
+    "university": "ĐH Bách Khoa",
+    "gpa": 2.42,
+    "ielts": 6.5,
+    "volunteer_hours": 4,
+    "research": true,
+    "disciplinary_action": false
+}

@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0014
+
+    Full Name: Hoang Gia Binh
+
+    University: ĐH KHTN
+
+    GPA: 4.0
+    

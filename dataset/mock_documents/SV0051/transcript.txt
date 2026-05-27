@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0051
+
+    Full Name: Le Thi Chau
+
+    University: ĐH CNTT
+
+    GPA: 2.09
+    

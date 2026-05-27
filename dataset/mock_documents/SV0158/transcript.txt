@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0158
+
+    Full Name: Nguyen Van Binh
+
+    University: ĐH FPT
+
+    GPA: 2.51
+    

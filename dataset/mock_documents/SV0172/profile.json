@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0172",
+    "student_name": "Nguyen Van Huy",
+    "university": "ĐH Bách Khoa",
+    "gpa": 3.2,
+    "ielts": 4.5,
+    "volunteer_hours": 7,
+    "research": true,
+    "disciplinary_action": false
+}

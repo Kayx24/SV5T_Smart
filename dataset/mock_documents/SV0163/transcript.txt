@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0163
+
+    Full Name: Le Thanh Chau
+
+    University: ĐH CNTT
+
+    GPA: 3.74
+    

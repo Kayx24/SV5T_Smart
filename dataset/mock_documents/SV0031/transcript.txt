@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0031
+
+    Full Name: Le Van Huy
+
+    University: ĐH Bách Khoa
+
+    GPA: 2.23
+    

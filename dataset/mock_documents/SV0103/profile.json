@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0103",
+    "student_name": "Tran Van Duy",
+    "university": "ĐH KHTN",
+    "gpa": 2.4,
+    "ielts": 7.0,
+    "volunteer_hours": 112,
+    "research": true,
+    "disciplinary_action": true
+}

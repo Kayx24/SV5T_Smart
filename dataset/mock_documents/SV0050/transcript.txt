@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0050
+
+    Full Name: Pham Minh Duy
+
+    University: ĐH FPT
+
+    GPA: 2.46
+    

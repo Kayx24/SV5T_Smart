@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0127
+
+    Full Name: Tran Thi Duy
+
+    University: ĐH Bách Khoa
+
+    GPA: 2.2
+    

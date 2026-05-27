@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0158",
+    "student_name": "Nguyen Van Binh",
+    "university": "ĐH FPT",
+    "gpa": 2.51,
+    "ielts": 5.0,
+    "volunteer_hours": 33,
+    "research": false,
+    "disciplinary_action": true
+}

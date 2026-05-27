@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0079",
+    "student_name": "Pham Minh Duy",
+    "university": "ĐH KHTN",
+    "gpa": 3.99,
+    "ielts": 4.5,
+    "volunteer_hours": 112,
+    "research": true,
+    "disciplinary_action": false
+}

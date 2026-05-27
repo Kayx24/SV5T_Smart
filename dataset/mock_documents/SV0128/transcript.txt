@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0128
+
+    Full Name: Pham Minh Huy
+
+    University: ĐH FPT
+
+    GPA: 2.8
+    

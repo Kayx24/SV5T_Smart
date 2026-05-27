@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0039
+
+    Full Name: Nguyen Thi Binh
+
+    University: ĐH FPT
+
+    GPA: 2.45
+    

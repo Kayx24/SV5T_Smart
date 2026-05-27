@@ -1,0 +1,11 @@
+
+    STUDENT TRANSCRIPT
+
+    Student ID: SV0167
+
+    Full Name: Le Gia Duy
+
+    University: ĐH CNTT
+
+    GPA: 2.64
+    

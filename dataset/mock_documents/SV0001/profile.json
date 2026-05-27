@@ -1,0 +1,10 @@
+{
+    "student_id": "SV0001",
+    "student_name": "Tran Thanh An",
+    "university": "ĐH KHTN",
+    "gpa": 2.56,
+    "ielts": 6.5,
+    "volunteer_hours": 81,
+    "research": false,
+    "disciplinary_action": true
+}
