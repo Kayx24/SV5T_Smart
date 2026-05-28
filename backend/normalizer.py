@@ -2,7 +2,9 @@ def normalize_student_data(raw_data):
 
     normalized = {}
 
-    # STUDENT ID
+    # ==========================================
+    # BASIC INFO
+    # ==========================================
 
     normalized["student_id"] = (
         raw_data.get("student_id")
@@ -11,8 +13,6 @@ def normalize_student_data(raw_data):
         or "UNKNOWN"
     )
 
-    # NAME
-
     normalized["student_name"] = (
         raw_data.get("student_name")
         or raw_data.get("name")
@@ -20,62 +20,100 @@ def normalize_student_data(raw_data):
         or "UNKNOWN"
     )
 
-    # UNIVERSITY
-
     normalized["university"] = (
         raw_data.get("university")
         or raw_data.get("school")
-        or raw_data.get("university_name")
         or "UNKNOWN"
     )
 
-    # GPA
+    # ==========================================
+    # SCORES
+    # ==========================================
 
     normalized["gpa"] = float(
-
-        raw_data.get("gpa")
-        or raw_data.get("avg_score")
-        or raw_data.get("grade_point")
-        or 0
+        raw_data.get("gpa", 0)
     )
 
-    # IELTS
+    normalized["conduct_score"] = float(
+        raw_data.get("conduct_score", 0)
+    )
 
     normalized["ielts"] = float(
-
-        raw_data.get("ielts")
-        or raw_data.get("english_band")
-        or raw_data.get("toeic_equivalent")
-        or 0
+        raw_data.get("ielts", 0)
     )
 
+    normalized["volunteer_days"] = int(
+        raw_data.get("volunteer_days", 0)
+    )
 
-    # RESEARCH
+    # ==========================================
+    # ACADEMIC
+    # ==========================================
+
     normalized["research"] = bool(
-
-        raw_data.get("research")
-        or raw_data.get("scientific_research")
-        or raw_data.get("research_paper")
-        or False
+        raw_data.get("research", False)
     )
 
+    normalized["academic_award"] = bool(
+        raw_data.get("academic_award", False)
+    )
+
+    # ==========================================
+    # PHYSICAL
+    # ==========================================
+
+    normalized["physical_certificate"] = bool(
+        raw_data.get(
+            "physical_certificate",
+            False
+        )
+    )
+
+    normalized["sports_award"] = bool(
+        raw_data.get(
+            "sports_award",
+            False
+        )
+    )
+
+    # ==========================================
     # VOLUNTEER
-    normalized["volunteer_hours"] = int(
+    # ==========================================
 
-        raw_data.get("volunteer_hours")
-        or raw_data.get("social_hours")
-        or raw_data.get("volunteer")
-        or 0
+    normalized["volunteer_award"] = bool(
+        raw_data.get(
+            "volunteer_award",
+            False
+        )
     )
 
+    # ==========================================
+    # INTEGRATION
+    # ==========================================
 
+    normalized["soft_skill_certificate"] = bool(
+        raw_data.get(
+            "soft_skill_certificate",
+            False
+        )
+    )
+
+    normalized["international_activity"] = bool(
+        raw_data.get(
+            "international_activity",
+            False
+        )
+    )
+
+    # ==========================================
     # DISCIPLINE
-    normalized["disciplinary_action"] = bool(
+    # ==========================================
 
-        raw_data.get("disciplinary_action")
-        or raw_data.get("discipline")
-        or raw_data.get("violation")
-        or False
+    normalized["disciplinary_action"] = bool(
+        raw_data.get(
+            "disciplinary_action",
+            False
+        )
     )
 
     return normalized

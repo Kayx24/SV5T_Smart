@@ -1,5 +1,6 @@
-
+# =====================================================
 # SV5T CENTRAL RULE ENGINE
+# =====================================================
 
 def evaluate_student(student):
 
@@ -7,7 +8,9 @@ def evaluate_student(student):
 
     global_fail_reasons = []
 
+    # =================================================
     # 1. ĐẠO ĐỨC TỐT
+    # =================================================
 
     dao_duc_details = []
 
@@ -23,7 +26,8 @@ def evaluate_student(student):
 
     dao_duc_pass = True
 
-    # Conduct score
+    # Điểm rèn luyện
+
     if conduct_score >= 90:
 
         dao_duc_details.append(
@@ -38,8 +42,9 @@ def evaluate_student(student):
             f"Điểm rèn luyện không đạt ({conduct_score} < 90)"
         )
 
-    # Discipline
-    if disciplinary_action == False:
+    # Kỷ luật
+
+    if disciplinary_action is False:
 
         dao_duc_details.append(
             "Không vi phạm kỷ luật"
@@ -68,7 +73,9 @@ def evaluate_student(student):
             "Không đạt Đạo đức tốt"
         )
 
+    # =================================================
     # 2. HỌC TẬP TỐT
+    # =================================================
 
     hoc_tap_details = []
 
@@ -87,9 +94,20 @@ def evaluate_student(student):
         False
     )
 
+    publication = student.get(
+        "publication",
+        False
+    )
+
+    academic_team = student.get(
+        "academic_team",
+        False
+    )
+
     hoc_tap_pass = True
 
     # GPA
+
     if gpa >= 3.6:
 
         hoc_tap_details.append(
@@ -104,11 +122,17 @@ def evaluate_student(student):
             f"GPA không đạt ({gpa} < 3.6)"
         )
 
-    # Research
-    if research or academic_award:
+    # Điều kiện học thuật phụ
+
+    if (
+        research
+        or academic_award
+        or publication
+        or academic_team
+    ):
 
         hoc_tap_details.append(
-            "Có nghiên cứu khoa học hoặc giải thưởng học thuật"
+            "Đạt tiêu chí nghiên cứu / học thuật"
         )
 
     else:
@@ -116,7 +140,7 @@ def evaluate_student(student):
         hoc_tap_pass = False
 
         hoc_tap_details.append(
-            "Thiếu nghiên cứu khoa học hoặc giải thưởng học thuật"
+            "Thiếu tiêu chí nghiên cứu / học thuật"
         )
 
     criteria["hoc_tap_tot"] = {
@@ -134,7 +158,9 @@ def evaluate_student(student):
             "Không đạt Học tập tốt"
         )
 
+    # =================================================
     # 3. THỂ LỰC TỐT
+    # =================================================
 
     the_luc_details = []
 
@@ -150,7 +176,10 @@ def evaluate_student(student):
 
     the_luc_pass = True
 
-    if physical_certificate or sports_award:
+    if (
+        physical_certificate
+        or sports_award
+    ):
 
         the_luc_details.append(
             "Đạt tiêu chí thể lực"
@@ -179,7 +208,9 @@ def evaluate_student(student):
             "Không đạt Thể lực tốt"
         )
 
+    # =================================================
     # 4. TÌNH NGUYỆN TỐT
+    # =================================================
 
     tinh_nguyen_details = []
 
@@ -230,7 +261,9 @@ def evaluate_student(student):
             "Không đạt Tình nguyện tốt"
         )
 
+    # =================================================
     # 5. HỘI NHẬP TỐT
+    # =================================================
 
     hoi_nhap_details = []
 
@@ -249,9 +282,15 @@ def evaluate_student(student):
         False
     )
 
+    integration_award = student.get(
+        "integration_award",
+        False
+    )
+
     hoi_nhap_pass = True
 
-    # IELTS
+    # Ngoại ngữ
+
     if ielts >= 6.0:
 
         hoi_nhap_details.append(
@@ -266,14 +305,16 @@ def evaluate_student(student):
             f"IELTS không đạt ({ielts} < 6.0)"
         )
 
-    # Skill / International
+    # Hội nhập
+
     if (
         soft_skill_certificate
         or international_activity
+        or integration_award
     ):
 
         hoi_nhap_details.append(
-            "Có hoạt động/kỹ năng hội nhập"
+            "Đạt tiêu chí hội nhập"
         )
 
     else:
@@ -299,7 +340,9 @@ def evaluate_student(student):
             "Không đạt Hội nhập tốt"
         )
 
+    # =================================================
     # FINAL RESULT
+    # =================================================
 
     final_pass = all([
 

@@ -2,13 +2,19 @@ import os
 from dotenv import load_dotenv
 import google.generativeai as genai
 
+# =====================================================
 # LOAD ENV
+# =====================================================
 
 load_dotenv()
 
-API_KEY = os.getenv("GEMINI_API_KEY")
+API_KEY = os.getenv(
+    "GEMINI_API_KEY"
+)
 
+# =====================================================
 # CONFIG GEMINI
+# =====================================================
 
 if API_KEY:
 
@@ -24,41 +30,39 @@ else:
 
     model = None
 
-
-# AI REVIEWER ANALYSIS
+# =====================================================
+# AI REVIEWER
+# =====================================================
 
 def generate_ai_reasoning(
     student_data,
     evaluation_result
 ):
 
-    # NO API KEY
-
     if model is None:
 
         return """
-AI Assistant chưa được cấu hình.
-
-Vui lòng kiểm tra:
-- file .env
-- GEMINI_API_KEY
+❌ Chưa cấu hình GEMINI_API_KEY
 """
 
-    # BUILD PROMPT
+    criteria = evaluation_result.get(
+        "criteria",
+        {}
+    )
 
     prompt = f"""
-Bạn là AI Reviewer Assistant hỗ trợ xét duyệt danh hiệu Sinh viên 5 tốt cấp Trung ương.
+Bạn là AI Reviewer Assistant hỗ trợ xét duyệt Sinh viên 5 tốt cấp Trung ương.
 
-QUAN TRỌNG:
-- KHÔNG tự quyết định PASS/FAIL
-- PASS/FAIL đã được Rule Engine xử lý
-- Bạn chỉ hỗ trợ reviewer phân tích hồ sơ
+LUẬT QUAN TRỌNG:
+- KHÔNG được thay đổi PASS/FAIL
+- PASS/FAIL do Rule Engine quyết định
+- Chỉ hỗ trợ reviewer phân tích hồ sơ
 
-====================================
+==================================================
 THÔNG TIN SINH VIÊN
-====================================
+==================================================
 
-Student ID:
+MSSV:
 {student_data.get("student_id")}
 
 Họ tên:
@@ -67,48 +71,34 @@ Họ tên:
 Trường:
 {student_data.get("university")}
 
-GPA:
-{student_data.get("gpa")}
+==================================================
+KẾT QUẢ TỪ RULE ENGINE
+==================================================
 
-IELTS:
-{student_data.get("ielts")}
+KẾT QUẢ:
+{"PASS" if evaluation_result.get("passed") else "FAIL"}
 
-Research:
-{student_data.get("research")}
+CHI TIẾT:
 
-Volunteer Hours:
-{student_data.get("volunteer_hours")}
+{criteria}
 
-Disciplinary Action:
-{student_data.get("disciplinary_action")}
+==================================================
+YÊU CẦU AI
+==================================================
 
-====================================
-KẾT QUẢ RULE ENGINE
-====================================
-
-PASS:
-{evaluation_result.get("passed")}
-
-FAIL REASONS:
-{evaluation_result.get("reasons")}
-
-====================================
-YÊU CẦU
-====================================
-
-Hãy hỗ trợ reviewer phân tích:
+Hãy phân tích:
 
 1. Tổng quan hồ sơ
 2. Điểm mạnh
 3. Điểm yếu
-4. Risk Analysis
-5. Recommendation cho reviewer
-6. Các điểm cần hậu kiểm nếu có
+4. Tiêu chí nào đạt
+5. Tiêu chí nào chưa đạt
+6. Risk analysis
+7. Recommendation cho reviewer
+8. Hồ sơ có cần hậu kiểm không
 
-KHÔNG được tự thay đổi kết quả Rule Engine.
+Viết rõ ràng theo markdown.
 """
-
-    # GENERATE
 
     try:
 
@@ -121,9 +111,7 @@ KHÔNG được tự thay đổi kết quả Rule Engine.
     except Exception as e:
 
         return f"""
-AI Assistant lỗi:
+❌ Gemini Error:
 
 {str(e)}
-
-Hệ thống vẫn hoạt động bình thường bằng Rule Engine.
 """

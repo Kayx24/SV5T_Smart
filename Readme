@@ -1,0 +1,480 @@
+# SV5T AI REVIEWER SYSTEM
+
+## 1. GIỚI THIỆU ĐỀ TÀI
+
+SV5T AI Reviewer System là hệ thống hỗ trợ xét duyệt danh hiệu “Sinh viên 5 tốt cấp Trung ương” bằng AI + Rule Engine.
+
+Mục tiêu:
+
+* hỗ trợ reviewer
+* giảm tải xét duyệt thủ công
+* batch processing hàng nghìn hồ sơ
+* phân tích dashboard
+* AI analytics
+* reviewer workflow
+* audit & traceability
+
+Hệ thống KHÔNG thay thế ban giám khảo.
+AI chỉ đóng vai trò:
+
+* hỗ trợ phân tích
+* giải thích
+* thống kê
+* hậu kiểm
+
+Quyết định cuối cùng vẫn thuộc reviewer.
+
+---
+
+# 2. ARCHITECTURE
+
+Pipeline hiện tại:
+
+UPLOAD FILES
+↓
+Batch Processor
+↓
+Column Normalizer
+↓
+Rule Engine
+↓
+PASS / FAIL / CRITERIA ANALYSIS
+↓
+Database
+↓
+Dashboard
+↓
+AI Analytics Layer
+↓
+Reviewer Assistant
+
+---
+
+# 3. CÔNG NGHỆ SỬ DỤNG
+
+Frontend:
+
+* Streamlit
+
+Backend:
+
+* Python
+
+Database:
+
+* SQLite
+* SQLAlchemy ORM
+
+Visualization:
+
+* Plotly
+
+AI:
+
+* Gemini 2.5 Flash (optional AI reviewer)
+
+Data Processing:
+
+* Pandas
+
+---
+
+# 4. MÔ HÌNH KIẾN TRÚC
+
+## 4.1 Rule-based Core
+
+Hệ thống sử dụng:
+
+* deterministic rule engine
+
+AI KHÔNG quyết định PASS/FAIL.
+
+PASS/FAIL chỉ dựa trên:
+
+* quy chế chính thức của Hội Sinh Viên Việt Nam.
+
+Điều này giúp:
+
+* explainable AI
+* transparent
+* auditability
+* dễ hậu kiểm
+
+---
+
+# 5. TIÊU CHÍ SINH VIÊN 5 TỐT
+
+## 5.1 Đạo đức tốt
+
+Điều kiện:
+
+* conduct_score >= 90
+* disciplinary_action == False
+
+---
+
+## 5.2 Học tập tốt
+
+Điều kiện:
+
+* GPA >= 3.6
+* có:
+
+  * research
+  * academic_award
+  * publication
+  * academic_team
+
+---
+
+## 5.3 Thể lực tốt
+
+Điều kiện:
+
+* physical_certificate == True
+  HOẶC
+* sports_award == True
+
+---
+
+## 5.4 Tình nguyện tốt
+
+Điều kiện:
+
+* volunteer_days >= 5
+  HOẶC
+* volunteer_award == True
+
+---
+
+## 5.5 Hội nhập tốt
+
+Điều kiện:
+
+* IELTS >= 6.0
+  VÀ
+  (
+  soft_skill_certificate == True
+  HOẶC
+  international_activity == True
+  HOẶC
+  integration_award == True
+  )
+
+---
+
+# 6. CẤU TRÚC FILE
+
+backend/
+
+## main.py
+
+Core processing pipeline.
+
+Nhiệm vụ:
+
+* nhận student data
+* normalize
+* evaluate rule engine
+* risk analysis
+* save database
+
+---
+
+## rules_engine.py
+
+Core business logic.
+
+Xử lý:
+
+* PASS/FAIL
+* từng tiêu chí riêng
+* explainability
+* fail reasons
+
+Output:
+
+* criteria analysis
+* detailed reasoning
+* final result
+
+---
+
+## batch_processor.py
+
+Batch upload engine.
+
+Chức năng:
+
+* đọc Excel
+* đọc CSV
+* normalize columns
+* parse dữ liệu lỗi
+* process hàng loạt
+
+---
+
+## database.py
+
+Kết nối SQLite.
+
+Chức năng:
+
+* save records
+* create sessions
+* ORM integration
+
+---
+
+## models.py
+
+SQLAlchemy schema.
+
+Bảng:
+student_evaluations
+
+Lưu:
+
+* student info
+* criteria
+* result
+* fail reasons
+* risk
+* reviewer workflow
+
+---
+
+## reasoning.py
+
+AI reviewer assistant.
+
+Gemini dùng để:
+
+* phân tích hồ sơ
+* giải thích
+* hậu kiểm
+* recommendation
+
+KHÔNG dùng để:
+
+* quyết định PASS/FAIL
+
+---
+
+## analytics_engine.py
+
+AI analytics layer.
+
+Trả lời:
+
+* bao nhiêu PASS
+* bao nhiêu FAIL
+* risk HIGH
+* thống kê reviewer
+
+---
+
+## normalizer.py
+
+Chuẩn hóa dữ liệu API.
+
+Dùng cho:
+
+* future VNPT API
+* OCR
+* multi-format schema
+
+---
+
+# 7. FRONTEND
+
+frontend/app.py
+
+Dashboard Streamlit.
+
+Features:
+
+* upload batch
+* dashboard
+* charts
+* reviewer assistant
+* AI analytics
+* database viewer
+
+---
+
+# 8. DATABASE DESIGN
+
+Bảng:
+student_evaluations
+
+Fields:
+
+* student_id
+* student_name
+* university
+* result
+* risk_level
+* confidence_score
+* criteria_json
+* fail_reasons
+* reviewer_notes
+* review_status
+
+---
+
+# 9. AI LAYER
+
+Gemini chỉ là:
+
+* reviewer assistant
+
+KHÔNG phải:
+
+* decision maker
+
+Lý do:
+
+* tránh hallucination
+* đúng quy chế
+* explainability
+* deterministic system
+
+---
+
+# 10. ĐIỂM ĐỔI MỚI
+
+## 10.1 AI-assisted reviewer
+
+Không phải chatbot AI thông thường.
+
+Mô hình:
+Rule Engine + AI Assistant
+
+---
+
+## 10.2 Explainable AI
+
+Mỗi tiêu chí:
+
+* PASS/FAIL riêng
+* giải thích riêng
+
+Ví dụ:
+
+Học tập tốt: FAIL
+
+* GPA không đạt
+* Thiếu NCKH
+
+---
+
+## 10.3 Batch AI Review
+
+Có thể:
+
+* upload hàng nghìn hồ sơ
+* xử lý hàng loạt
+
+---
+
+## 10.4 Reviewer Dashboard
+
+Hiển thị:
+
+* PASS/FAIL
+* HIGH RISK
+* fail reasons
+* analytics
+
+---
+
+## 10.5 Future-ready API Adapter
+
+Đã chuẩn bị:
+
+* normalize layer
+* OCR pipeline
+* VNPT Reader integration
+
+---
+
+# 11. WORKFLOW TƯƠNG LAI
+
+Khi ban tổ chức cấp API:
+
+VNPT Reader OCR API
+↓
+OCR Extraction
+↓
+Normalizer
+↓
+Rule Engine
+↓
+Database
+↓
+AI Analytics
+↓
+Reviewer Dashboard
+
+---
+
+# 12. MVP STATUS
+
+Hiện tại hệ thống đã đạt:
+MVP vòng 2.
+
+Đã có:
+
+* rule engine
+* reviewer dashboard
+* batch processing
+* analytics
+* AI assistant
+* explainable result
+
+Chưa hoàn thiện:
+
+* OCR thật
+* queue system
+* reviewer collaboration
+* audit log
+* production deployment
+
+---
+
+# 13. ĐỊNH HƯỚNG MỞ RỘNG
+
+Future:
+
+* PostgreSQL
+* FastAPI
+* Redis Queue
+* OCR Adapter
+* Multi-reviewer workflow
+* Audit logging
+* JWT Auth
+* Docker deployment
+* Kubernetes
+* Vector search
+* LLM local inference
+
+---
+
+# 14. KẾT LUẬN
+
+SV5T AI Reviewer System là hệ thống:
+
+* AI-assisted reviewer
+* explainable
+* deterministic
+* scalable
+* batch-review ready
+
+Mục tiêu:
+
+* hỗ trợ xét duyệt Sinh viên 5 tốt cấp Trung ương
+* giảm tải reviewer
+* tăng minh bạch
+* tăng tốc xét duyệt
+* hỗ trợ hậu kiểm

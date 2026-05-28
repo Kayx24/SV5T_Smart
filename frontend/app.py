@@ -367,72 +367,72 @@ if not df.empty:
 
         # CRITERIA DETAILS
 
-        st.subheader(
-            "📋 5 Tiêu chí SV5T"
-        )
+        # st.subheader(
+        #     "📋 5 Tiêu chí SV5T"
+        # )
 
-        criteria_mapping = [
+        # criteria_mapping = [
 
-            (
-                "Đạo đức tốt",
-                "dao_duc_status",
-                "dao_duc_details"
-            ),
+        #     (
+        #         "Đạo đức tốt",
+        #         "dao_duc_status",
+        #         "dao_duc_details"
+        #     ),
 
-            (
-                "Học tập tốt",
-                "hoc_tap_status",
-                "hoc_tap_details"
-            ),
+        #     (
+        #         "Học tập tốt",
+        #         "hoc_tap_status",
+        #         "hoc_tap_details"
+        #     ),
 
-            (
-                "Thể lực tốt",
-                "the_luc_status",
-                "the_luc_details"
-            ),
+        #     (
+        #         "Thể lực tốt",
+        #         "the_luc_status",
+        #         "the_luc_details"
+        #     ),
 
-            (
-                "Tình nguyện tốt",
-                "tinh_nguyen_status",
-                "tinh_nguyen_details"
-            ),
+        #     (
+        #         "Tình nguyện tốt",
+        #         "tinh_nguyen_status",
+        #         "tinh_nguyen_details"
+        #     ),
 
-            (
-                "Hội nhập tốt",
-                "hoi_nhap_status",
-                "hoi_nhap_details"
-            )
-        ]
+        #     (
+        #         "Hội nhập tốt",
+        #         "hoi_nhap_status",
+        #         "hoi_nhap_details"
+        #     )
+        # ]
 
-        for title, status_col, detail_col in criteria_mapping:
+        # for title, status_col, detail_col in criteria_mapping:
 
-            status = student[status_col]
+        #     status = student[status_col]
 
-            details = student[detail_col]
+        #     details = student[detail_col]
 
-            if status == "PASS":
+        #     if status == "PASS":
 
-                st.success(
-                    f"{title}: PASS"
-                )
+        #         st.success(
+        #             f"{title}: PASS"
+        #         )
 
-            else:
+        #     else:
 
-                st.error(
-                    f"{title}: FAIL"
-                )
+        #         st.error(
+        #             f"{title}: FAIL"
+        #         )
 
-            detail_lines = str(
-                details
-            ).split("\n")
+        #     detail_lines = str(
+        #         details
+        #     ).split("\n")
 
-            for line in detail_lines:
+        #     for line in detail_lines:
 
-                st.markdown(
-                    f"- {line}"
-                )
+        #         st.markdown(
+        #             f"- {line}"
+        #         )
 
-            st.divider()
+        #     st.divider()
 
     # FULL DATABASE
 
