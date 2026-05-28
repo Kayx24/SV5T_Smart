@@ -1,117 +1,323 @@
-import json
-import os
 
-# =========================
-# GET CURRENT FILE PATH
-# =========================
+# SV5T CENTRAL RULE ENGINE
 
-CURRENT_DIR = os.path.dirname(
-    os.path.abspath(__file__)
-)
+def evaluate_student(student):
 
-RULES_PATH = os.path.join(
-    CURRENT_DIR,
-    "config_rules.json"
-)
+    criteria = {}
 
-# =========================
-# LOAD RULES
-# =========================
+    global_fail_reasons = []
 
-with open(
-    RULES_PATH,
-    "r",
-    encoding="utf-8"
-) as f:
+    # 1. ĐẠO ĐỨC TỐT
 
-    RULES = json.load(f)
+    dao_duc_details = []
 
-# =========================
-# RULE ENGINE
-# =========================
+    conduct_score = student.get(
+        "conduct_score",
+        0
+    )
 
-def evaluate_student(student_data):
+    disciplinary_action = student.get(
+        "disciplinary_action",
+        False
+    )
 
-    reasons = []
+    dao_duc_pass = True
 
-    passed = True
+    # Conduct score
+    if conduct_score >= 90:
 
-    # =========================
-    # GPA
-    # =========================
-
-    if student_data["gpa"] < RULES["gpa_min"]:
-
-        passed = False
-
-        reasons.append(
-            f"GPA dưới yêu cầu "
-            f"({student_data['gpa']} < "
-            f"{RULES['gpa_min']})"
+        dao_duc_details.append(
+            f"Điểm rèn luyện đạt ({conduct_score} >= 90)"
         )
 
-    # =========================
-    # IELTS
-    # =========================
+    else:
 
-    if student_data["ielts"] < RULES["ielts_min"]:
+        dao_duc_pass = False
 
-        passed = False
-
-        reasons.append(
-            f"IELTS dưới yêu cầu "
-            f"({student_data['ielts']} < "
-            f"{RULES['ielts_min']})"
+        dao_duc_details.append(
+            f"Điểm rèn luyện không đạt ({conduct_score} < 90)"
         )
 
-    # =========================
-    # Volunteer
-    # =========================
-
-    if (
-        student_data["volunteer_hours"]
-        < RULES["volunteer_hours_min"]
-    ):
-
-        passed = False
-
-        reasons.append(
-            "Không đủ giờ tình nguyện"
-        )
-
-    # =========================
-    # Research
-    # =========================
-
-    if (
-        RULES["research_required"]
-        and not student_data["research"]
-    ):
-
-        passed = False
-
-        reasons.append(
-            "Thiếu nghiên cứu khoa học"
-        )
-
-    # =========================
     # Discipline
-    # =========================
+    if disciplinary_action == False:
 
-    if (
-        RULES[
-            "disciplinary_action_must_be_false"
-        ]
-        and student_data["disciplinary_action"]
-    ):
+        dao_duc_details.append(
+            "Không vi phạm kỷ luật"
+        )
 
-        passed = False
+    else:
 
-        reasons.append(
+        dao_duc_pass = False
+
+        dao_duc_details.append(
             "Có vi phạm kỷ luật"
         )
 
+    criteria["dao_duc_tot"] = {
+
+        "status":
+        "PASS" if dao_duc_pass else "FAIL",
+
+        "details":
+        dao_duc_details
+    }
+
+    if not dao_duc_pass:
+
+        global_fail_reasons.append(
+            "Không đạt Đạo đức tốt"
+        )
+
+    # 2. HỌC TẬP TỐT
+
+    hoc_tap_details = []
+
+    gpa = student.get(
+        "gpa",
+        0
+    )
+
+    research = student.get(
+        "research",
+        False
+    )
+
+    academic_award = student.get(
+        "academic_award",
+        False
+    )
+
+    hoc_tap_pass = True
+
+    # GPA
+    if gpa >= 3.6:
+
+        hoc_tap_details.append(
+            f"GPA đạt ({gpa} >= 3.6)"
+        )
+
+    else:
+
+        hoc_tap_pass = False
+
+        hoc_tap_details.append(
+            f"GPA không đạt ({gpa} < 3.6)"
+        )
+
+    # Research
+    if research or academic_award:
+
+        hoc_tap_details.append(
+            "Có nghiên cứu khoa học hoặc giải thưởng học thuật"
+        )
+
+    else:
+
+        hoc_tap_pass = False
+
+        hoc_tap_details.append(
+            "Thiếu nghiên cứu khoa học hoặc giải thưởng học thuật"
+        )
+
+    criteria["hoc_tap_tot"] = {
+
+        "status":
+        "PASS" if hoc_tap_pass else "FAIL",
+
+        "details":
+        hoc_tap_details
+    }
+
+    if not hoc_tap_pass:
+
+        global_fail_reasons.append(
+            "Không đạt Học tập tốt"
+        )
+
+    # 3. THỂ LỰC TỐT
+
+    the_luc_details = []
+
+    physical_certificate = student.get(
+        "physical_certificate",
+        False
+    )
+
+    sports_award = student.get(
+        "sports_award",
+        False
+    )
+
+    the_luc_pass = True
+
+    if physical_certificate or sports_award:
+
+        the_luc_details.append(
+            "Đạt tiêu chí thể lực"
+        )
+
+    else:
+
+        the_luc_pass = False
+
+        the_luc_details.append(
+            "Không đạt tiêu chí thể lực"
+        )
+
+    criteria["the_luc_tot"] = {
+
+        "status":
+        "PASS" if the_luc_pass else "FAIL",
+
+        "details":
+        the_luc_details
+    }
+
+    if not the_luc_pass:
+
+        global_fail_reasons.append(
+            "Không đạt Thể lực tốt"
+        )
+
+    # 4. TÌNH NGUYỆN TỐT
+
+    tinh_nguyen_details = []
+
+    volunteer_days = student.get(
+        "volunteer_days",
+        0
+    )
+
+    volunteer_award = student.get(
+        "volunteer_award",
+        False
+    )
+
+    tinh_nguyen_pass = True
+
+    if volunteer_days >= 5:
+
+        tinh_nguyen_details.append(
+            f"Đủ ngày tình nguyện ({volunteer_days} >= 5)"
+        )
+
+    elif volunteer_award:
+
+        tinh_nguyen_details.append(
+            "Có thành tích tình nguyện"
+        )
+
+    else:
+
+        tinh_nguyen_pass = False
+
+        tinh_nguyen_details.append(
+            f"Không đủ ngày tình nguyện ({volunteer_days} < 5)"
+        )
+
+    criteria["tinh_nguyen_tot"] = {
+
+        "status":
+        "PASS" if tinh_nguyen_pass else "FAIL",
+
+        "details":
+        tinh_nguyen_details
+    }
+
+    if not tinh_nguyen_pass:
+
+        global_fail_reasons.append(
+            "Không đạt Tình nguyện tốt"
+        )
+
+    # 5. HỘI NHẬP TỐT
+
+    hoi_nhap_details = []
+
+    ielts = student.get(
+        "ielts",
+        0
+    )
+
+    soft_skill_certificate = student.get(
+        "soft_skill_certificate",
+        False
+    )
+
+    international_activity = student.get(
+        "international_activity",
+        False
+    )
+
+    hoi_nhap_pass = True
+
+    # IELTS
+    if ielts >= 6.0:
+
+        hoi_nhap_details.append(
+            f"IELTS đạt ({ielts} >= 6.0)"
+        )
+
+    else:
+
+        hoi_nhap_pass = False
+
+        hoi_nhap_details.append(
+            f"IELTS không đạt ({ielts} < 6.0)"
+        )
+
+    # Skill / International
+    if (
+        soft_skill_certificate
+        or international_activity
+    ):
+
+        hoi_nhap_details.append(
+            "Có hoạt động/kỹ năng hội nhập"
+        )
+
+    else:
+
+        hoi_nhap_pass = False
+
+        hoi_nhap_details.append(
+            "Thiếu hoạt động/kỹ năng hội nhập"
+        )
+
+    criteria["hoi_nhap_tot"] = {
+
+        "status":
+        "PASS" if hoi_nhap_pass else "FAIL",
+
+        "details":
+        hoi_nhap_details
+    }
+
+    if not hoi_nhap_pass:
+
+        global_fail_reasons.append(
+            "Không đạt Hội nhập tốt"
+        )
+
+    # FINAL RESULT
+
+    final_pass = all([
+
+        dao_duc_pass,
+        hoc_tap_pass,
+        the_luc_pass,
+        tinh_nguyen_pass,
+        hoi_nhap_pass
+    ])
+
     return {
-        "passed": passed,
-        "reasons": reasons
+
+        "passed":
+        final_pass,
+
+        "criteria":
+        criteria,
+
+        "reasons":
+        global_fail_reasons
     }

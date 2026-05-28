@@ -1,263 +1,481 @@
 import streamlit as st
 import pandas as pd
-import sys
+import plotly.express as px
 import os
-from reasoning import model
+import sys
+import random
 
-sys.path.append(
-    os.path.abspath(
-        "../backend"
+# CONNECT BACKEND
+BACKEND_PATH = os.path.abspath(
+    os.path.join(
+        os.path.dirname(__file__),
+        "..",
+        "backend"
     )
 )
 
+sys.path.insert(0, BACKEND_PATH)
+# IMPORT BACKEND
+from sqlalchemy import create_engine
+from batch_processor import process_batch
 from main import process_student
-from database import (
-    SessionLocal,
-    StudentEvaluation
-)
+from analytics_engine import analytics_query
+from reasoning import generate_ai_reasoning
 
-
+# PAGE CONFIG
 st.set_page_config(
     page_title="SV5T AI Reviewer",
-    page_icon="🎓",
     layout="wide"
 )
 
-
+# TITLE
 st.title(
-    "🎓 AI Reviewer Platform"
+    "🎓 SV5T AI Reviewer System"
 )
 
-st.markdown(
-    """
-Hệ thống AI hỗ trợ xét duyệt
-Sinh viên 5 tốt cấp Trung ương
-"""
+st.markdown("""
+AI-assisted reviewer system hỗ trợ:
+
+- xét duyệt Sinh viên 5 tốt
+- batch processing
+- reviewer workflow
+- AI analytics
+- explainable review
+- reviewer dashboard
+""")
+
+# DATABASE
+
+BASE_DIR = os.path.dirname(
+    os.path.abspath(__file__)
 )
 
-
-st.subheader(
-    "📂 Upload Student Documents"
+DB_PATH = os.path.join(
+    BASE_DIR,
+    "..",
+    "backend",
+    "sv5tot.db"
 )
 
-uploaded_file = st.file_uploader(
+engine = create_engine(
+    f"sqlite:///{DB_PATH}"
+)
 
-    "Upload document",
+# SIDEBAR
+st.sidebar.header(
+    "⚙️ Control Panel"
+)
+
+# DEMO GENERATOR
+if "demo_counter" not in st.session_state:
+
+    st.session_state.demo_counter = 0
+
+if st.sidebar.button(
+    "Generate Demo Student"
+):
+
+    st.session_state.demo_counter += 1
+
+    # 4 FAIL -> 1 PASS
+    if st.session_state.demo_counter % 5 == 0:
+
+        demo_student = {
+
+            "student_id":
+            f"SVPASS{random.randint(100,999)}",
+
+            "student_name":
+            "Sinh Vien PASS Demo",
+
+            "university":
+            "ĐH Quốc Gia",
+
+            "gpa":
+            3.85,
+
+            "conduct_score":
+            95,
+
+            "ielts":
+            7.0,
+
+            "research":
+            True,
+
+            "academic_award":
+            True,
+
+            "physical_certificate":
+            True,
+
+            "sports_award":
+            False,
+
+            "volunteer_days":
+            10,
+
+            "volunteer_award":
+            True,
+
+            "soft_skill_certificate":
+            True,
+
+            "international_activity":
+            True,
+
+            "disciplinary_action":
+            False
+        }
+
+        result = process_student(
+            demo_student
+        )
+
+    else:
+
+        result = process_student()
+
+    st.success(
+        "Đã xử lý hồ sơ demo"
+    )
+
+# BATCH UPLOAD
+st.header(
+    "📂 Batch Upload"
+)
+
+uploaded_files = st.file_uploader(
+
+    "Upload hồ sơ sinh viên",
+
+    accept_multiple_files=True,
 
     type=[
         "pdf",
         "png",
         "jpg",
-        "jpeg"
+        "jpeg",
+        "xlsx",
+        "csv"
     ]
 )
 
+if uploaded_files:
 
-if uploaded_file:
+    st.success(
+        f"Đã upload {len(uploaded_files)} file"
+    )
 
     if st.button(
-        "🚀 Analyze Student"
+        "🚀 Process Batch"
     ):
 
         with st.spinner(
-            "AI analyzing..."
+            "Đang xử lý batch..."
         ):
 
-            result = process_student()
-
+            results = process_batch(
+                uploaded_files
+            )
 
         st.success(
-            "Analysis completed"
+            f"Đã xử lý {len(results)} hồ sơ"
+        )
+
+# LOAD DATABASE
+query = """
+SELECT *
+FROM student_evaluations
+"""
+
+df = pd.read_sql(
+    query,
+    engine
+)
+
+# DASHBOARD
+if not df.empty:
+
+    st.divider()
+
+    st.header(
+        "📊 Reviewer Dashboard"
+    )
+
+    # METRICS
+    total_students = len(df)
+
+    total_pass = len(
+        df[df["result"] == "PASS"]
+    )
+
+    total_fail = len(
+        df[df["result"] == "FAIL"]
+    )
+
+    total_high_risk = len(
+        df[df["risk_level"] == "HIGH"]
+    )
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    col1.metric(
+        "TOTAL",
+        total_students
+    )
+
+    col2.metric(
+        "PASS",
+        total_pass
+    )
+
+    col3.metric(
+        "FAIL",
+        total_fail
+    )
+
+    col4.metric(
+        "HIGH RISK",
+        total_high_risk
+    )
+
+
+    # PIE CHART
+    st.subheader(
+        "📈 PASS / FAIL Distribution"
+    )
+
+    pie_data = pd.DataFrame({
+
+        "Result":
+        ["PASS", "FAIL"],
+
+        "Count":
+        [total_pass, total_fail]
+    })
+
+    fig = px.pie(
+        pie_data,
+        names="Result",
+        values="Count"
+    )
+
+    st.plotly_chart(
+        fig,
+        width="stretch"
+    )
+
+    # RISK CHART
+    st.subheader(
+        "⚠️ Risk Level Distribution"
+    )
+
+    risk_chart = px.histogram(
+        df,
+        x="risk_level"
+    )
+
+    st.plotly_chart(
+        risk_chart,
+        width="stretch"
+    )
+
+    # FAIL STUDENTS
+
+    st.subheader(
+        "❌ FAIL Students"
+    )
+
+    fail_df = df[
+        df["result"] == "FAIL"
+    ]
+
+    if not fail_df.empty:
+
+        st.dataframe(
+
+            fail_df[
+                [
+                    "student_id",
+                    "student_name",
+                    "university",
+                    "fail_reasons",
+                    "risk_level"
+                ]
+            ],
+
+            width="stretch"
+        )
+
+    # STUDENT DETAIL VIEW
+    st.divider()
+
+    st.header(
+        "🧠 Explainable Review"
+    )
+
+    student_ids = df[
+        "student_id"
+    ].tolist()
+
+    selected_student = st.selectbox(
+
+        "Chọn sinh viên",
+
+        student_ids
+    )
+
+    selected_df = df[
+        df["student_id"] == selected_student
+    ]
+
+    if not selected_df.empty:
+
+        student = selected_df.iloc[0]
+
+        st.subheader(
+            f"🎓 {student['student_name']}"
         )
 
         col1, col2 = st.columns(2)
 
-
         with col1:
 
-            st.subheader(
-                "👨‍🎓 Student Information"
-            )
+            st.markdown(
+                f"""
+### 📌 Thông tin
 
-            st.json(
-                result["student_data"]
+- Student ID: {student['student_id']}
+- Trường: {student['university']}
+- Result: {student['result']}
+- Risk: {student['risk_level']}
+"""
             )
 
         with col2:
 
-            st.subheader(
-                "📊 Evaluation"
+            st.markdown(
+                f"""
+### ⚠️ Fail Reasons
+
+{student['fail_reasons']}
+"""
             )
 
-            st.json(
-                result["evaluation"]
-            )
+        st.divider()
 
-
-        st.subheader("🤖 AI Reviewer Assistant")
-
-        user_question = st.text_input(
-
-            "Ask AI about this student"
-        )
-
-        if user_question:
-
-            with st.spinner(
-                "Gemini thinking..."
-            ):
-
-                prompt = f"""
-
-        You are an AI reviewer assistant.
-
-        Student data:
-        {result["student_data"]}
-        Evaluation:
-        {result["evaluation"]}
-        AI reasoning:
-        {result["reasoning"]}
-        Reviewer question:
-        {user_question}
-        Answer professionally.
-        """
-
-                response = model.generate_content(
-                    prompt
-                )
-
-                st.info(
-                    response.text
-                )
-
-        st.write(
-            result["reasoning"]
-        )
+        # CRITERIA DETAILS
 
         st.subheader(
-            "🧑‍⚖ Reviewer Decision"
+            "📋 5 Tiêu chí SV5T"
         )
 
-        decision = st.radio(
-            "Reviewer Action",
-            [
-                "APPROVED",
-                "REJECTED",
-                "MANUAL_REVIEW"
+        criteria_mapping = [
 
-            ]
-        )
+            (
+                "Đạo đức tốt",
+                "dao_duc_status",
+                "dao_duc_details"
+            ),
 
-        if st.button(
-            "💾 Save Reviewer Decision"
-        ):
+            (
+                "Học tập tốt",
+                "hoc_tap_status",
+                "hoc_tap_details"
+            ),
 
-            db = SessionLocal()
+            (
+                "Thể lực tốt",
+                "the_luc_status",
+                "the_luc_details"
+            ),
 
-            latest_record = db.query(
-                StudentEvaluation
-            ).order_by(
-                StudentEvaluation.id.desc()
-            ).first()
+            (
+                "Tình nguyện tốt",
+                "tinh_nguyen_status",
+                "tinh_nguyen_details"
+            ),
 
-            if latest_record:
-
-                latest_record.reviewer_decision = decision
-
-                db.commit()
-
-            db.close()
-
-            st.success(
-                f"Decision saved: {decision}"
+            (
+                "Hội nhập tốt",
+                "hoi_nhap_status",
+                "hoi_nhap_details"
             )
+        ]
 
+        for title, status_col, detail_col in criteria_mapping:
 
-st.divider()
-st.header(
-    "📈 Reviewer Dashboard"
-)
+            status = student[status_col]
 
-db = SessionLocal()
+            details = student[detail_col]
 
-records = db.query(
-    StudentEvaluation
-).all()
-db.close()
+            if status == "PASS":
 
-data = []
+                st.success(
+                    f"{title}: PASS"
+                )
 
-for r in records:
+            else:
 
-    data.append({
+                st.error(
+                    f"{title}: FAIL"
+                )
 
-        "Student ID": r.student_id,
-        "Name": r.student_name,
-        "University": r.university,
-        "Result": r.result,
-        "Reviewer": r.reviewer_decision,
-        "Risk": r.risk_level
-    })
+            detail_lines = str(
+                details
+            ).split("\n")
 
-df = pd.DataFrame(data)
+            for line in detail_lines:
 
-st.dataframe(
+                st.markdown(
+                    f"- {line}"
+                )
 
-    df,
-    use_container_width=True
-)
+            st.divider()
 
+    # FULL DATABASE
 
-
-if not df.empty:
     st.subheader(
-        "📊 Analytics"
+        "📋 Full Database"
     )
 
-    col1, col2 = st.columns(2)
-    with col1:
+    st.dataframe(
+        df,
+        width="stretch"
+    )
 
-        st.markdown(
-            "### PASS / FAIL"
+
+# AI ANALYTICS
+st.divider()
+st.header(
+    "🤖 AI Analytics Assistant"
+)
+
+question = st.text_input(
+    "Hỏi AI Analytics"
+)
+
+if st.button(
+    "Ask AI"
+):
+
+    if question.strip() == "":
+
+        st.warning(
+            "Nhập câu hỏi"
         )
 
-        pass_fail = df[
-            "Result"
-        ].value_counts()
+    else:
 
-        st.plotly_chart({
-            "data": [
+        with st.spinner(
+            "AI đang phân tích..."
+        ):
 
-                {
-                    "labels": pass_fail.index,
-                    "values": pass_fail.values,
-                    "type": "pie",
-                    "hole": 0.4
-                }
+            answer = analytics_query(
+                question
+            )
 
-            ]
-
-        })
-
-
-    with col2:
         st.markdown(
-            "### Reviewer Decision"
+            answer
         )
-
-        reviewer_stats = df[
-            "Reviewer"
-        ].value_counts()
-
-        st.plotly_chart({
-
-            "data": [
-
-                {
-
-                    "labels": reviewer_stats.index,
-                    "values": reviewer_stats.values,
-                    "type": "pie"
-                }
-            ]
-        })
