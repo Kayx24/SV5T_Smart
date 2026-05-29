@@ -103,7 +103,7 @@ D:\HOCTAP\SV5T-2\
 
 ---
 
-## 6. 🚀 Sáng kiến kỹ thuật & Tính năng vượt trội cấp cao (Senior Concepts)
+## 6. 🚀 Sáng kiến kỹ thuật & Tính năng vượt trội cấp cao 
 
 Hệ thống sở hữu 3 giải thuật quan trọng giúp tối ưu hóa hiệu năng, giải quyết triệt để các bài toán thực tế của hệ thống doanh nghiệp lớn:
 
