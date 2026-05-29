@@ -3,7 +3,7 @@
 > Hệ thống trợ lý trí tuệ nhân tạo phối hợp bộ lọc quy chế (Rule Engine) hỗ trợ tự động hóa, thẩm định diện rộng và quản lý hàng đợi xét chọn danh hiệu **Sinh viên 5 tốt cấp Trung ương**.
 
 ---
-
+ 
 ## 1. 🎯 Giới thiệu đề tài & Mục tiêu hệ thống
 
 **SmartV5T** là giải pháp công nghệ toàn diện được thiết kế chuyên biệt để giải quyết bài toán thắt cổ chai hành chính trong mỗi mùa xét duyệt hồ sơ danh hiệu Sinh viên 5 tốt tại các cơ sở giáo dục đại học. Hệ thống là sự kết hợp chặt chẽ giữa bộ lọc quy tắc cứng (Rule Engine) và Trí tuệ nhân tạo (Explainable AI).
