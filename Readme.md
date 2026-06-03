@@ -182,3 +182,14 @@ Gõ lệnh để kích hoạt giao diện Web Streamlit trên trình duyệt:
 streamlit run frontend/app.py
 ```
 Hệ thống sẽ tự động mở trang web quản trị tại địa chỉ mặc định `http://localhost:8501`. Bạn đã sẵn sàng nạp file Excel danh sách thử nghiệm để trải nghiệm toàn bộ luồng xử lý tự động hóa của hệ thống!
+
+## 🧪 Kiểm thử Tự động (Unit Testing) cho Normalizer
+
+Hệ thống tiếp nhận dữ liệu từ nhiều nguồn (các Khoa/Trường khác nhau) với cấu trúc file Excel không đồng nhất. Để đảm bảo Pipeline không bị crash (sập) khi gặp dữ liệu "rác" hoặc sai định dạng, chúng ta sử dụng `pytest` để kiểm thử module `UniversalNormalizer`.
+
+### 1. Cài đặt công cụ kiểm thử
+Đảm bảo bạn đã cài đặt môi trường và thư viện `pytest`:
+```bash
+pip install pytest pandas openpyxl
+Chạy
+pytest backend/test_normalizer.py -v

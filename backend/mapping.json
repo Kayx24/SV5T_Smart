@@ -1,0 +1,17 @@
+{
+  "student_id": ["mã số sinh viên", "mssv", "mã sv", "student id", "id", "mã số sv"],
+  "student_name": ["họ và tên", "họ tên", "tên sinh viên", "name", "full name"],
+  "university": ["trường", "đại học", "university", "school", "đơn vị"],
+  "gpa": ["điểm học tập", "trung bình tích lũy", "gpa", "điểm tb", "đht"],
+  "conduct_score": ["điểm rèn luyện", "đrl", "điểm rl", "đ.r.l"],
+  "ielts": ["trình độ ngoại ngữ", "tiếng anh", "ielts", "toeic", "ngoại ngữ"],
+  "volunteer_days": ["số ngày tình nguyện", "ngày tnx", "tình nguyện", "volunteer days"],
+  "research": ["nghiên cứu khoa học", "nckh", "research"],
+  "academic_award": ["giải thưởng học thuật", "học thuật", "academic award"],
+  "physical_certificate": ["giấy chứng nhận thể lực", "thể lực tốt", "chứng nhận thanh niên khỏe"],
+  "sports_award": ["giải thưởng thể thao", "thể thao", "sports award"],
+  "volunteer_award": ["giấy khen tình nguyện", "khen thưởng tình nguyện", "volunteer award"],
+  "soft_skill_certificate": ["kỹ năng mềm", "chứng nhận knm", "soft skill"],
+  "international_activity": ["hội nhập quốc tế", "hoạt động quốc tế", "quốc tế"],
+  "disciplinary_action": ["kỷ luật", "vi phạm", "disciplinary action"]
+}
