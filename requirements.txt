@@ -8,4 +8,4 @@ plotly
 python-multipart
 sqlalchemy
 dotenv
-google.generativeai
+google-genai==1.60.0

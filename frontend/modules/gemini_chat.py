@@ -1,35 +1,68 @@
 import os
-import google.generativeai as genai
-from dotenv import load_dotenv
 
-# Load biến môi trường
-load_dotenv(dotenv_path="Q:\anaconda\envs\sv5t")
+from dotenv import load_dotenv
+from google import genai
+
+# =====================================================
+# LOAD ENV
+# =====================================================
+
+load_dotenv()
+
 API_KEY = os.getenv("GEMINI_API_KEY")
 
+# =====================================================
+# GEMINI CLIENT
+# =====================================================
+
+client = None
+
 if API_KEY:
-    genai.configure(api_key=API_KEY)
-    model = genai.GenerativeModel("gemini-2.5-flash") # Dùng model tối ưu tốc độ
-else:
-    model = None
-
-def get_ai_advice(student_profile, user_question):
-    """
-    Gửi prompt chứa ngữ cảnh hồ sơ sinh viên và câu hỏi tới Gemini.
-    """
-    if model is None:
-        return "Lỗi: Chưa cấu hình GEMINI_API_KEY trong file .env."
-
-    system_prompt = f"""
-    You are Student AI Assistant. You help students achieve "Sinh Vien 5 Tot" (SV5T) criteria.
-    Dưới đây là hồ sơ hiện tại của sinh viên:
-    {student_profile}
-    
-    Hãy dựa vào hồ sơ này để trả lời câu hỏi của sinh viên một cách ngắn gọn, khích lệ và thực tế bằng tiếng Việt.
-    Câu hỏi của sinh viên: {user_question}
-    """
-    
     try:
-        response = model.generate_content(system_prompt)
-        return response.text
+        client = genai.Client(
+            api_key=API_KEY
+        )
     except Exception as e:
-        return f"Đã xảy ra lỗi kết nối với AI: {str(e)}"
+        print(f"Gemini init error: {e}")
+
+# =====================================================
+# STUDENT AI ASSISTANT
+# =====================================================
+
+def get_ai_advice(
+    student_profile,
+    user_question
+):
+
+    if client is None:
+        return "❌ Chưa cấu hình GEMINI_API_KEY"
+
+    prompt = f"""
+Bạn là Student AI Assistant hỗ trợ sinh viên đạt danh hiệu Sinh viên 5 tốt.
+
+THÔNG TIN SINH VIÊN:
+{student_profile}
+
+CÂU HỎI:
+{user_question}
+
+Yêu cầu:
+- Trả lời bằng tiếng Việt.
+- Ngắn gọn, dễ hiểu.
+- Đưa ra lời khuyên thực tế.
+- Nếu sinh viên còn thiếu tiêu chí nào thì nêu rõ.
+- Khuyến khích sinh viên tiếp tục hoàn thiện hồ sơ.
+"""
+
+    try:
+
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt
+        )
+
+        return response.text
+
+    except Exception as e:
+
+        return f"❌ Gemini Error: {str(e)}"

@@ -1,6 +1,12 @@
 import os
+import warnings
 from dotenv import load_dotenv
-import google.generativeai as genai
+from google import genai
+
+warnings.filterwarnings(
+    "ignore",
+    category=UserWarning
+)
 
 # =====================================================
 # LOAD ENV
@@ -8,7 +14,7 @@ import google.generativeai as genai
 
 load_dotenv()
 
-API_KEY = os.getenv(
+GEMINI_API_KEY = os.getenv(
     "GEMINI_API_KEY"
 )
 
@@ -16,19 +22,21 @@ API_KEY = os.getenv(
 # CONFIG GEMINI
 # =====================================================
 
-if API_KEY:
+client = None
 
-    genai.configure(
-        api_key=API_KEY
-    )
+if GEMINI_API_KEY:
 
-    model = genai.GenerativeModel(
-        "gemini-2.5-flash"
-    )
+    try:
 
-else:
+        client = genai.Client(
+            api_key=GEMINI_API_KEY
+        )
 
-    model = None
+    except Exception as e:
+
+        print(
+            f"Gemini init error: {e}"
+        )
 
 # =====================================================
 # AI REVIEWER
@@ -39,7 +47,7 @@ def generate_ai_reasoning(
     evaluation_result
 ):
 
-    if model is None:
+    if client is None:
 
         return """
 ❌ Chưa cấu hình GEMINI_API_KEY
@@ -102,8 +110,9 @@ Viết rõ ràng theo markdown.
 
     try:
 
-        response = model.generate_content(
-            prompt
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt
         )
 
         return response.text
