@@ -6,3 +6,6 @@ openpyxl
 requests
 plotly
 python-multipart
+sqlalchemy
+dotenv
+google.generativeai
