@@ -18,17 +18,13 @@ API_KEY = os.getenv(
 
 if API_KEY:
 
-    genai.configure(
+    client = genai.Client(
         api_key=API_KEY
-    )
-
-    model = genai.GenerativeModel(
-        "gemini-2.5-flash"
     )
 
 else:
 
-    model = None
+    client = None
 
 # =====================================================
 # AI REVIEWER
@@ -39,7 +35,7 @@ def generate_ai_reasoning(
     evaluation_result
 ):
 
-    if model is None:
+    if client is None:
 
         return """
 ❌ Chưa cấu hình GEMINI_API_KEY
@@ -102,8 +98,9 @@ Viết rõ ràng theo markdown.
 
     try:
 
-        response = model.generate_content(
-            prompt
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt
         )
 
         return response.text
