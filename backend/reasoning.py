@@ -1,7 +1,8 @@
 import os
 from dotenv import load_dotenv
-import google.genai as genai
-
+import google.generativeai as genai
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="pydantic")
 # =====================================================
 # LOAD ENV
 # =====================================================
