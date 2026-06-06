@@ -133,9 +133,9 @@ class UniversalNormalizer:
         # ==========================================
         # Dùng vòng lặp cho các cột boolean để code gọn và dễ bảo trì
         bool_fields = [
-            "research", "academic_award", "physical_certificate", 
+           "research", "academic_award", "publication", "physical_certificate", 
             "sports_award", "volunteer_award", "soft_skill_certificate", 
-            "international_activity", "disciplinary_action"
+            "international_activity", "integration_award", "disciplinary_action"
         ]
         
         for field in bool_fields:
